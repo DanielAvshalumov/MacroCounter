@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  padding: 25px 40px;
+}
+
+nav {
+  display: flex;
+  border: 1px solid;
+  height: 150px;
+  box-shadow: 5px 10px;
+}
+
+main {
+  padding: 10px;
+}
+
+.nav {
+  display: flex;
+  justify-content: left;
+  font-size: 20px;
+  height: 67px;
+}
+
+.nav > h3 {
+  margin:10px;
+  margin-right: 100px;
+  padding: 10px;
+  cursor: pointer;
+  
+  
+}
+
+.calorie-counter {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: 100;
+  margin-left:auto;
+}
+
+.calorie-counter > h4 {
+  padding: 10px;
+  margin: 5px;
+}
+
+.date {
+  margin-left: 398px;
+  margin-top: -43px;
+}
+
+.net-calories {
+  display: flex;
+  margin-top:-60px;
+  margin-left:10px;
+}
+
+.net-calories > h3 {
+  margin-left: 40px;
+  margin-top: 0px;
+}
+
+.macros > h2 {
+  margin-bottom: 80px;
+}
+
+.home-container {
+  display: flex;
+  margin-top: 140px;
+}
+
+.intake {
+  display: flex;
+  flex-direction: column;
+  margin-left: 120px;
+  margin-top: -63px;
+}
+
+.intake > h4 {
+  margin-bottom: 70px;
+}
+
+.outtake {
+  display: flex;
+  flex-direction: column;
+  margin-left: 140px;
+  margin-top: -20px;
+}
+
+.add-macro {
+  display: flex;
+  margin-top: 80px;
+}
+
+.list-meal {
+  display: flex;
+  padding: 30px;
+  justify-content: space-between;
+}
+
+.clock {
+  margin-top: -58px;
+  margin-left: 420px;
+}
