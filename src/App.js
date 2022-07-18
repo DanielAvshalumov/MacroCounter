@@ -20,11 +20,16 @@ function App() {
     const [meals,setMeals] = useState([]);
     const [today, setToday] = useState();
     const logs = [];
-    // Load meals from previous session 
+    // Load meals and calories from previous session 
     useEffect(() => {
         for(let i = 0; i < window.localStorage.length; i++) {
             const key = window.localStorage.key(i);
-            setMeals(prevMeal => [...prevMeal,JSON.parse(window.localStorage.getItem(key))]);
+            if(key !== "calories") {
+                setMeals(prevMeal => [...prevMeal,JSON.parse(window.localStorage.getItem(key))]);
+            } else {
+                setCalories(JSON.parse(window.localStorage.getItem(key)));
+            }
+            
         }
     },[]);
     // Saves meals to localStorage
@@ -33,6 +38,10 @@ function App() {
             window.localStorage.setItem(element.mealName,JSON.stringify(element));
         });
     },[meals]);
+    // Saves Calories to localStorage
+    useEffect(() => {
+        window.localStorage.setItem("calories",JSON.stringify(calories));
+    },[calories]);
     // Updates Time
     useEffect(() => {
         const timer = setInterval(() => {
@@ -55,7 +64,7 @@ function App() {
         return () => {
             clearInterval(timer);
         }
-    });
+    },[today]);
     
     return (
         <div>
