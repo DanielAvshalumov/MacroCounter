@@ -25,6 +25,9 @@ function NavBar(props) {
                 }))
             }
         })
+        props.setMealLogs(prev => {
+            return [...prev,selectedMeal]
+        })
     }
 
     // Creates drop down menu for meals

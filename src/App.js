@@ -19,7 +19,7 @@ function App() {
     const [page, setPage] = useState("Home");
     const [meals,setMeals] = useState([]);
     const [today, setToday] = useState();
-    const logs = [];
+    const [mealLogs, setMealLogs] = useState([]);
     // Load meals and calories from previous session 
     useEffect(() => {
         for(let i = 0; i < window.localStorage.length; i++) {
@@ -64,7 +64,10 @@ function App() {
         return () => {
             clearInterval(timer);
         }
-    },[today]);
+    },[]);
+    useEffect(() => {
+        console.log(mealLogs);
+    },[mealLogs]);
     
     return (
         <div>
@@ -74,15 +77,20 @@ function App() {
             page = {page}
             meals = {meals}
             today = {today}
+            setMealLogs = {setMealLogs}
             changePage = { (event)=> setPage(event.target.id)} 
             />
             {page === "Home" && <Home 
             calories = {calories}
+            setCalories = {setCalories}
             />}
             {page === "Meals" && <Meals 
             meals = {meals}
-            setMeals = {setMeals}/>}
-            {page === "Logs" && <Logs />}
+            setMeals = {setMeals}
+            />}
+            {page === "Logs" && <Logs 
+            mealLogs = {mealLogs}
+            />}
         </div>
     )
 }
