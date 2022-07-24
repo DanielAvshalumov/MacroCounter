@@ -1,17 +1,6 @@
 
 function Home(props) {
-    const handleReset = () => {
-        props.setCalories({
-            in: 0,
-            out: 2381,
-            proteinTotal: 203,
-            protein: 0,
-            carbsTotal: 270,
-            carbs: 0,
-            fatsTotal: 61,
-            fats: 0
-        });
-    }
+    
     return (
         <main className="home-container">
             <div className="macros">
@@ -38,7 +27,7 @@ function Home(props) {
                 <h4>{(props.calories.fatsTotal)-props.calories.fats}</h4>
             </div>
             <button 
-            onClick={handleReset}
+            onClick={props.handleReset}
             style={
                 {
                     display:"flex",

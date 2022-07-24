@@ -1,12 +1,14 @@
 import React from "react"
 
 const Log = (props) => {
-    console.log(props.mealLogs)
+    
     return (
         <div style={{marginRight:160}}>
             <ul>
-                {props.mealLogs.map(x => (<li>{x}</li>))}
+                {props.mealLogs.map((x,key) => (<li key={key}>{x}</li>))}
             </ul>
+            <h4>{props.calories}</h4>
+            <h4>{props.protein}</h4>
         </div>
     )
 }
